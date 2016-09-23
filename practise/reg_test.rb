@@ -22,3 +22,6 @@ print_mult($x, x, CONST, @instance)
 $x, x, @instance = 4, 3, 2
 print_mult($x, x, CONST, @instance)
 
+ary = [1, 2, '3']
+a, b, c = ary
+p "#{a}, #{b}, #{c}"
