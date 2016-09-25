@@ -23,9 +23,6 @@ module Spider
   module_function :crawl
 end
 
-# Spider.crawl('http://www.baidu.com/') { |segment|
-#   puts segment
-# }
 max_size = 0
 buffer = ''
 Spider.crawl('https://www.ietf.org/rfc/rfc2616.txt') { |segment|
@@ -38,3 +35,7 @@ puts "max segment size: #{max_size}"
 buffer_lines = buffer.split(/\n/)
 first_line = buffer_lines.bsearch{|line| line.size > 10}
 puts first_line.chars.sort { |a, b| b <=> a }.join
+
+# Spider.crawl('http://www.baidu.com/') { |segment|
+#   puts segment
+# }
