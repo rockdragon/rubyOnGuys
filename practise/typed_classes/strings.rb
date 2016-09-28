@@ -53,3 +53,5 @@ p "ABCDE".tr("BD", "bd")
 p "ABCDE".tr("A-E", "a-e")
 
 p 'Ruby is an object oriented programming language'.split(/\s/)
+
+p %w(PHP 是翔).join
