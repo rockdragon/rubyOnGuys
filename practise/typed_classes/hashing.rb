@@ -13,3 +13,7 @@ person3['age'] = 18
 p person3
 p person3.class
 p person3.class.ancestors
+
+p person3.keys
+p person3.values
+p person3.to_a
