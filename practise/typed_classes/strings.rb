@@ -24,7 +24,32 @@ EOB
   end
 end
 
-p 'hello'.length
 p 'hello'.size
-p '你好'.length
+p 'hello'.bytesize
 p '你好'.size
+p '你好'.bytesize
+
+desc = %Q{Ruby 的字符串中也可以使用'' 和""。}
+p desc
+
+str = "高桥:gaoqiao:1234567:000-123-4567"
+column = str.split(/:/)
+p column
+p str.slice!(2, 5)
+p str
+
+str = "壹\n 贰\n 叁\n"
+tmp = str.each_line.collect do |line|
+  line.chomp
+end
+p tmp
+
+str222 = "AA\nBB\nCC\n"
+p str222.each_line.class
+p str222.each_line.map{|line| line.chop }
+
+p "ABCDE".tr("B", "b")
+p "ABCDE".tr("BD", "bd")
+p "ABCDE".tr("A-E", "a-e")
+
+p 'Ruby is an object oriented programming language'.split(/\s/)
