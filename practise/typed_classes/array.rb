@@ -31,3 +31,23 @@ s = %w(i'm your father, luke)
 p s.sort_by {|w| w.length}
 p s.sort {|a, b| a <=> b }
 
+arr3 = %w(1 2 3 4 5 6)
+arr4 = %w(4 5 6 7 8 9)
+p (arr3 | arr4) - arr3
+p arr3 & arr4
+
+aaa = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+p aaa
+
+bbb = Array.new(3, [0, 0, 0])
+bbb[0][1] = 2
+p bbb
+
+ccc = Array.new(3) do
+  [0, 0, 0]
+end
+ccc[0][1] = 2
+p ccc
+
+ddd = Array.new(5) {|x| x + 1}
+p ddd
