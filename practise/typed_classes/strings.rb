@@ -10,3 +10,8 @@ i*j = #{i*j}
 EOB
   end
 end
+
+p 'hello'.length
+p 'hello'.size
+p '你好'.length
+p '你好'.size
