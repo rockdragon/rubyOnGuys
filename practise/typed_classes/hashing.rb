@@ -1,5 +1,12 @@
-person = Array.new
-person[0] = "田中一郎"
-person[1] = "佐藤次郎"
-person[2] = "木村三郎"
-p person[1]
+person = {'name' => 'tom', 'sex' => 'male', 'age' => 18}
+p person
+
+
+person2 = {name: 'tom', sex: 'male', age: 18}
+p person2
+
+person3 = Hash.new
+person3['name'] = 'tom'
+person3['sex'] = 'male'
+person3['age'] = 18
+p person3
