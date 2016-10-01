@@ -9,6 +9,7 @@ class Point
   def inspect
     "#{x}, #{y}"
   end
+  alias to_s inspect
 
   def +(other)
     self.class.new(x + other.x, y + other.y)
