@@ -40,7 +40,7 @@ def traverse(path)
       while name = dir.read
         next if name == '.'
         next if name == '..'
-        traverse(path + '/' + name)
+        traverse(File.expand_path(name))
       end
     end
   else
