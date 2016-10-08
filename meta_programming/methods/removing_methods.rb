@@ -5,3 +5,8 @@ xml.coder {
   xml.name 'Matsumoto', :nickname => 'Matz'
   xml.language 'Ruby'
 }
+
+xml.semester {
+  xml.class 'Egyptology'
+  xml.class 'Ornithology'
+}
