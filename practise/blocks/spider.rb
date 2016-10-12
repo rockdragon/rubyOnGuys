@@ -3,11 +3,9 @@ require('uri')
 
 module Spider
   def crawl(url_string)
-    # 单例类
-    class << url_string
-      def ssl?
-        (/^https/ =~ self) != nil
-      end
+    # singleton method
+    def url_string.ssl?
+      (/^https/ =~ self) != nil
     end
 
     url = URI.parse(url_string)
@@ -33,7 +31,7 @@ Spider.crawl('https://www.ietf.org/rfc/rfc2616.txt') { |segment|
 }
 puts "max segment size: #{max_size}"
 buffer_lines = buffer.split(/\n/)
-first_line = buffer_lines.bsearch{|line| line.size > 10}
+first_line = buffer_lines.bsearch { |line| line.size > 10 }
 puts first_line.chars.sort_by { |a, b| b <=> a }.join
 
 # Spider.crawl('http://www.baidu.com/') { |segment|
