@@ -4,6 +4,7 @@ require('uri')
 module Spider
   def crawl(url_string)
     # singleton method
+    # class << url_string
     def url_string.ssl?
       (/^https/ =~ self) != nil
     end
