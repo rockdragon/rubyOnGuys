@@ -1,4 +1,4 @@
-require_relative 'stat_lib'
+require_relative 'libs/measuration'
 
 array = [10.0, 8.5, 10.0, 10.2, 10.6, 10.5, 9.8, 9.7, 9.5, 9.3]
 col = StatLib::Collection.new(array)
