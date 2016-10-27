@@ -8,32 +8,32 @@ module StatLib
 
     #和
     def sum(array)
-      ; array.reduce(&:+);
+       array.reduce(&:+)
     end
 
     #平均数
-    def average;
-      self.sum(@array) / (@array.size + 0.0);
+    def average
+      self.sum(@array) / (@array.size + 0.0)
     end
 
     #平均(绝对离)差
-    def mean_deviation;
-      sum(differences_abs) / (@array.size + 0.0);
+    def mean_deviation
+      sum(differences_abs) / (@array.size + 0.0)
     end
 
     #方差
-    def variation;
-      sum(differences_power_n(2)) / (@array.size + 0.0);
+    def variation
+      sum(differences_power_n(2)) / (@array.size + 0.0)
     end
 
     #标准差
-    def standard_deviation;
-      Math.sqrt(self.variation);
+    def standard_deviation
+      Math.sqrt(self.variation)
     end
 
     #离散系数
-    def discreteness;
-      standard_deviation / average;
+    def discreteness
+      standard_deviation / average
     end
 
     #偏态系数

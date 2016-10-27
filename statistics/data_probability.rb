@@ -1,3 +1,3 @@
 require_relative 'libs/probability'
 
-p StatLib::Propability.pa(2, 10)
+p StatLib::Propability.probability_of_a(2, 10)
