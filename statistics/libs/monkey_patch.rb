@@ -6,9 +6,11 @@ class Integer
 
   private
   def _fact(acc)
-    if self <= 2
+    if self == 0
+      1
+    elsif self <= 2
       self * acc
-    else
+    else # tail recursion
       (self - 1).send :_fact, acc * self
     end
   end

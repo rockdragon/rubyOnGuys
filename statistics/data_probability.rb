@@ -1,3 +1,6 @@
 require_relative 'libs/probability'
 
-p StatLib::Propability.probability_of_a(2, 10)
+# 二项分布
+p StatLib::Propability.binomial_distribution(1000, 0, 0.0015).round(6)
+# 松泊分布
+p StatLib::Propability.poisson_distribution(1000, 0, 0.0015).round(6)
