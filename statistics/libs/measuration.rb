@@ -13,17 +13,17 @@ module StatLib
 
     #平均数
     def average
-      self.sum(@array) / (@array.size + 0.0)
+      self.sum(@array).fdiv(@array.size)
     end
 
     #平均(绝对离)差
     def mean_deviation
-      sum(differences_abs) / (@array.size + 0.0)
+      sum(differences_abs).fdiv(@array.size)
     end
 
     #方差
     def variation
-      sum(differences_power_n(2)) / (@array.size + 0.0)
+      sum(differences_power_n(2)).fdiv(@array.size)
     end
 
     #标准差
@@ -41,7 +41,7 @@ module StatLib
       n = @array.size
       molecule = sum(differences_power_n(3))
       denominator = (n - 1) * (n - 2) * standard_deviation ** 3
-      molecule / (denominator + 0.0)
+      molecule .fdiv(denominator)
     end
 
     #峰态系数
@@ -49,7 +49,7 @@ module StatLib
       n = @array.size
       molecule = n * (n + 1) * sum(differences_power_n(4)) - 3 * sum(differences_power_n(2)) ** 2 * (n - 1)
       denominator = (n - 1) * (n - 2) * (n - 3) * standard_deviation ** 4
-      molecule / (denominator + 0.0)
+      molecule.fdiv(denominator)
     end
 
     private
