@@ -8,7 +8,7 @@ module StatLib
 
     #和
     def sum(array)
-       array.reduce(&:+)
+      array.reduce(&:+)
     end
 
     #平均数
@@ -23,7 +23,8 @@ module StatLib
 
     #方差
     def variation
-      sum(differences_power_n(2)).fdiv(@array.size)
+      n = @array.size - 1
+      sum(differences_power_n(2)).fdiv(n)
     end
 
     #标准差
@@ -41,7 +42,7 @@ module StatLib
       n = @array.size
       molecule = sum(differences_power_n(3))
       denominator = (n - 1) * (n - 2) * standard_deviation ** 3
-      molecule .fdiv(denominator)
+      molecule.fdiv(denominator)
     end
 
     #峰态系数
@@ -55,7 +56,26 @@ module StatLib
     # k阶矩
     def moment(k)
       n = @array.size
-      sum(@array.collect { |x|  x ** k }).fdiv(n)
+      sum(@array.collect { |x| x ** k }).fdiv(n)
+    end
+
+    # k阶中心矩
+    def central_moment(k)
+      n = @array.size
+      sum(differences_power_n(k)).fdiv(n-1)
+    end
+
+    # 样本偏度
+    def sample_skewness
+      n = @array.size
+      (sum(differences_power_n(3)).fdiv(n)).fdiv((sum(differences_power_n(2)) / n) ** 1.5)
+      # (Math.sqrt(n - 1) * sum(differences_power_n(3))).fdiv(sum(differences_power_n(2)) ** 1.5)
+    end
+
+    # 样本峰度
+    def sample_kurtosis
+      n = @array.size
+      ((n - 1) * sum(differences_power_n(4))).fdiv(sum(differences_power_n(2)) ** 2) - 3
     end
 
     private

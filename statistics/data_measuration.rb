@@ -12,3 +12,7 @@ p %Q{标准差:          #{col.standard_deviation.to_f } }
 p %Q{离散系数:        #{col.discreteness.to_f } }
 p %Q{偏态系数:        #{col.skewness.to_f } }
 p %Q{峰态系数:        #{col.kurtosis.to_f } }
+p %Q{3阶矩:          #{col.moment(3).to_f } }
+p %Q{3阶中心矩:      #{col.central_moment(3).to_f } }
+p %Q{样本偏度:       #{col.sample_skewness.to_f } }
+p %Q{样本峰度:       #{col.sample_kurtosis.to_f } }
