@@ -52,6 +52,12 @@ module StatLib
       molecule.fdiv(denominator)
     end
 
+    # k阶矩
+    def moment(k)
+      n = @array.size
+      sum(@array.collect { |x|  x ** k }).fdiv(n)
+    end
+
     private
     #平均差集合
     def differences
@@ -70,6 +76,7 @@ module StatLib
       x_ = self.average
       @array.collect { |x| (x - x_) ** n }
     end
+
   end
 
 end
