@@ -1,10 +1,10 @@
 module StatLib
-  require_relative 'ext_lib'
+  require_relative 'exts/lib'
 
   class Propability
     # 二项分布
     def self.binomial_distribution(n, x, p)
-      ExtLib.combine(n, x) * (p ** x) * ((1-p) ** (n -x))
+      Lib.combine(n, x) * (p ** x) * ((1-p) ** (n -x))
     end
 
     # 松泊分布
@@ -12,5 +12,6 @@ module StatLib
       lbd = n * p
       lbd ** x * (Math::E) ** -lbd / x.factorial
     end
+
   end
 end

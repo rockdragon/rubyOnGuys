@@ -1,5 +1,5 @@
-module ExtLib
-  require_relative 'monkey_patch'
+module Lib
+  require_relative '../patches/integer'
 
   def self.combine(n, x)
     n.factorial / (x.factorial * (n - x).factorial)
