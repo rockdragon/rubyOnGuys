@@ -22,14 +22,14 @@ module StatLib
     end
 
     #方差
-    def variation
+    def variance
       n = @array.size - 1
       sum(differences_power_n(2)).fdiv(n)
     end
 
     #标准差
     def standard_deviation
-      Math.sqrt(self.variation)
+      Math.sqrt(self.variance)
     end
 
     #离散系数
