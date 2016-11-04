@@ -44,7 +44,7 @@ module StatLib
           @array[(3 * n).fdiv(4).ceil - 1]
     end
 
-    # 最大矩
+    # 最大(全)矩
     def maximal_moment
       @array.max - @array.min
     end
@@ -56,7 +56,7 @@ module StatLib
 
     #方差
     def variance
-      n = @array.size - 1
+      n = @array.size
       sum(differences_power_n(2)).fdiv(n)
     end
 
