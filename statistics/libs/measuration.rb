@@ -54,7 +54,8 @@ module StatLib
       sum(differences_abs).fdiv(@array.size)
     end
 
-    #方差
+    # 方差
+    # 速算：sum(x ** 2) / n - u ** 2
     def variance
       n = @array.size
       sum(differences_power_n(2)).fdiv(n)
