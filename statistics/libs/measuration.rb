@@ -2,8 +2,11 @@ module StatLib
   class Collection
     require 'bigdecimal'
 
+    attr_accessor :raw_array
+
     def initialize(array)
-      @array = array.collect { |x| BigDecimal.new(x.to_s) }
+      @raw_array = array.sort
+      @array = @raw_array.collect { |x| BigDecimal.new(x.to_s) }
     end
 
     #和
@@ -11,9 +14,39 @@ module StatLib
       array.reduce(&:+)
     end
 
-    #平均数
+    # 均值
     def average
       self.sum(@array).fdiv(@array.size)
+    end
+
+    # 中位数
+    def median
+      n = @array.size
+      middle = n / 2
+      n % 2 == 0 ? (@array[middle] + @array[middle + 1]) / 2 : @array[middle]
+    end
+
+    # 下四分位数
+    def lower_quartile
+      n = @array.size
+      quarter = n / 4 - 1
+      (n % 4 == 0) ?
+          (@array[quarter] + @array[quarter + 1]).fdiv(2) :
+          @array[n.fdiv(4).ceil - 1]
+    end
+
+    # 上四分位数
+    def upper_quartile
+      n = @array.size
+      upper_quarter = 3 * n / 4 - 1
+      (3 * n % 4 == 0) ?
+          (@array[upper_quarter] + @array[upper_quarter + 1]).fdiv(2) :
+          @array[(3 * n).fdiv(4).ceil - 1]
+    end
+
+    # 最大矩
+    def maximal_moment
+      @array.max - @array.min
     end
 
     #平均(绝对离)差
