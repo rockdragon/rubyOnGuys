@@ -1,11 +1,11 @@
 require_relative '../libs/measuration_group'
 
 data = [
-    {x:-2, px:0.977},
-    {x:23, px:0.008},
-    {x:48, px:0.008},
-    {x:73, px:0.006},
-    {x:98, px:0.001}
+    {x:1, px:0.1},
+    {x:2, px:0.25},
+    {x:3, px:0.35},
+    {x:4, px:0.2},
+    {x:5, px:0.1}
 ]
 
 col = StatLib::Collection.new(data)
