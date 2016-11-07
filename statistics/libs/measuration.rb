@@ -61,9 +61,14 @@ module StatLib
       sum(differences_power_n(2)).fdiv(n)
     end
 
-    #标准差
+    # 标准差
     def standard_deviation
       Math.sqrt(self.variance)
+    end
+
+    # 标准分
+    def standard_score(new_value)
+      (new_value - average).fdiv(standard_deviation)
     end
 
     #离散系数
