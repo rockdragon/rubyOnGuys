@@ -4,7 +4,7 @@ module StatLib
   class Propability
     # 二项分布
     def self.binomial_distribution(n, x, p)
-      Lib.combine(n, x) * (p ** x) * ((1-p) ** (n -x))
+      Lib.combination(n, x) * (p ** x) * ((1-p) ** (n -x))
     end
 
     # 松泊分布

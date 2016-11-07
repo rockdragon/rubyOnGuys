@@ -1,6 +1,7 @@
 module StatLib
   class Collection
     require 'bigdecimal'
+    require_relative 'exts/lib'
 
     attr_accessor :raw_array
 

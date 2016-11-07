@@ -1,5 +1,7 @@
 module StatLib
   class Collection
+    require_relative 'exts/lib'
+
     attr_accessor :array
 
     def initialize(array)
