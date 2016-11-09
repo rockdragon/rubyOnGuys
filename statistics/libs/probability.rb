@@ -12,11 +12,5 @@ module StatLib
       lbd = n * p
       lbd ** x * (Math::E) ** -lbd / x.factorial
     end
-
-    # 几何分布
-    def self.geometric_distribution(q, p, r)
-      q ** (r - 1) * p
-    end
-
   end
 end
