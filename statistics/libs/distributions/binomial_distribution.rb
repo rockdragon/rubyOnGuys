@@ -8,7 +8,7 @@ module StatLib
   #   感兴趣的是：获得成功的次数(r次成功的概率)
   class BinomialDistribution
     # 成功x次概率
-    def self.nxp(n, r, p)
+    def self.nrp(n, r, p)
       Lib.combination(n, r) * (p ** r) * ((1-p) ** (n -r))
     end
 
