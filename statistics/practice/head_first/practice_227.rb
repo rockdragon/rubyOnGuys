@@ -1,4 +1,4 @@
-require_relative '../libs/measuration_group'
+require_relative '../../libs/measuration_group'
 
 data = [
     {x: 1.5, px: 0.1},

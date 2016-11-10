@@ -1,4 +1,4 @@
-require_relative '../libs/measuration'
+require_relative '../../libs/measuration'
 
 player1 = [7, 9, 9, 10, 10, 10, 10, 11, 11, 13]
 player2 = [7, 8, 9, 9, 10, 10, 11, 11, 12, 13]
