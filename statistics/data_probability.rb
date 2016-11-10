@@ -1,6 +1,7 @@
-require_relative 'libs/probability'
+require_relative 'libs/binomial_distribution'
+require_relative 'libs/poisson_distribution'
 
 # 二项分布
-p StatLib::Propability.binomial_distribution(1000, 0, 0.0015).round(6)
+p StatLib::BinomialDistribution.nxp(1000, 0, 0.0015).round(6)
 # 松泊分布
-p StatLib::Propability.poisson_distribution(1000, 0, 0.0015).round(6)
+p StatLib::PoissonDistribution.nxp(1000, 0, 0.0015).round(6)
