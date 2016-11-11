@@ -1,4 +1,4 @@
-require_relative '../libs/distributions/geometric_distribution'
+require_relative '../../libs/distributions/geometric_distribution'
 
 q = 0.6
 p = 1 - q

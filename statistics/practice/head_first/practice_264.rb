@@ -1,4 +1,4 @@
-require_relative '../libs/exts/lib'
+require_relative '../../libs/exts/lib'
 
 n = 12
 r = 5
