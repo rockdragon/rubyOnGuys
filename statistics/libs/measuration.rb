@@ -62,6 +62,12 @@ module StatLib
       sum(differences_power_n(2)).fdiv(n)
     end
 
+    # 样本方差
+    def variance_sample
+      n = @array.size
+      sum(differences_power_n(2)).fdiv(n - 1)
+    end
+
     # 标准差
     def standard_deviation
       Math.sqrt(self.variance)
