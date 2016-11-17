@@ -25,6 +25,11 @@ module StatLib
       o.fdiv(Math.sqrt(n))
     end
 
+    # 中心极限定理
+    def normalize_sample(n, u, o)
+      {u: u, o: (o ** 2).fdiv(n)}
+    end
+
     # 正态化二项分布
     def normalize_binomial_dst(n, p)
       {u: n * p, o2: p * (1-p)}
