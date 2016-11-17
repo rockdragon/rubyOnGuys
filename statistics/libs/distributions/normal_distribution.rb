@@ -26,6 +26,8 @@ module StatLib
     end
 
     # 中心极限定理
+    #   对于样本来说，符合的正态分布是
+    #   N ~ (u, o2/n)
     def normalize_sample(n, u, o)
       {u: u, o: (o ** 2).fdiv(n)}
     end
