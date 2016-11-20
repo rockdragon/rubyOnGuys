@@ -57,4 +57,4 @@ def tail(file, n=10)
   end
 end # 中文可以~
 
-puts tail('./IO_exercise.rb', 16)
+puts tail('./IO_exercise_tail.rb', 16)
