@@ -1,4 +1,6 @@
 module StatLib
+  require_relative '../exts/lib'
+
   # 置信区间
   class ConfidenceInterval
     def self.level_to_c(level)
@@ -28,6 +30,13 @@ module StatLib
       q = 1 - p
       boundary = c * Math.sqrt((q * p).fdiv(n))
       {lower: p - boundary, upper: p + boundary}
+    end
+
+    # T分布的置信区间
+    #   t:T分布概率,可由 p=(1-level)/2 和 v=n-1 查表确定
+    def self.t_interval(x, s, n, t)
+      boundary = t * s.fdiv(Math.sqrt(n))
+      {lower: x - boundary, upper: x + boundary}
     end
   end
 end
