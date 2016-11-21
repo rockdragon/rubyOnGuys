@@ -7,28 +7,28 @@ module StatLib
     #   x X取值
     #   u 均值（期望）
     #   o 标准差
-    def standard_score(x, u, o)
+    def self.standard_score(x, u, o)
       (x - u).fdiv(o)
     end
 
     # 样本的比例标准误差
     #   n 样本大小
     #   p 成功概率
-    def proportional_std_deviation(n, p)
+    def self.proportional_std_deviation(n, p)
       Math.sqrt((p * (1 - p)).fdiv(n))
     end
 
     # 样本的均值标准误差
     #   n 样本大小
     #   o 标准差
-    def average_std_deviation(n, o)
+    def self.average_std_deviation(n, o)
       o.fdiv(Math.sqrt(n))
     end
 
     # 中心极限定理
     #   对于样本来说，符合的正态分布是
     #   N ~ (u, o2/n)
-    def normalize_sample(n, u, o)
+    def self.normalize_sample(n, u, o)
       {u: u, o2: (o ** 2).fdiv(n)}
     end
 
