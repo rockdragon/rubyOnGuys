@@ -33,12 +33,12 @@ module StatLib
     end
 
     # 正态化二项分布
-    def normalize_binomial_dst(n, p)
+    def self.normalize_binomial_dst(n, p)
       {u: n * p, o2: p * (1-p)}
     end
 
     # 正态化泊松分布
-    def normalize_poisson_dst(n, lbd)
+    def self.normalize_poisson_dst(n, lbd)
       {u: lbd, o2: lbd.fdiv(n)}
     end
 
