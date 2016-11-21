@@ -29,7 +29,7 @@ module StatLib
     #   对于样本来说，符合的正态分布是
     #   N ~ (u, o2/n)
     def normalize_sample(n, u, o)
-      {u: u, o: (o ** 2).fdiv(n)}
+      {u: u, o2: (o ** 2).fdiv(n)}
     end
 
     # 正态化二项分布
