@@ -5,6 +5,7 @@ module StatLib
   class X2Distribution
     # 求卡方分布的　检验统计量
     #   array中哈希字段 {:o, :e}
+    #     o 观测　e　期望
     def self.x2(array)
       array.inject(0) { |sum, ele| sum + ((ele[:o] - ele[:e]) ** 2).fdiv(ele[:e]) }
     end
