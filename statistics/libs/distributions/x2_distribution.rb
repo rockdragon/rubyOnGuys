@@ -9,5 +9,11 @@ module StatLib
     def self.x2(array)
       array.inject(0) { |sum, ele| sum + ((ele[:o] - ele[:e]) ** 2).fdiv(ele[:e]) }
     end
+
+    # 自由度
+    #     h 行   k 列
+    def self.degree_of_freedom(h, k)
+      (h - 1) * (k - 1)
+    end
   end
 end
