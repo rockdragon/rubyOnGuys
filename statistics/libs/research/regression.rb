@@ -68,6 +68,16 @@ module StatLib
       s_xy.fdiv(s_x * s_y)
     end
 
+    # 抽样分布的标准差
+    def sb
+      n = @array.size - 2
+      x_ = average(:x)
+      y_ = average(:y)
+      molecule = @array.inject(0){|sum, ele| sum + (ele[:x] - x_) ** 2}.fdiv(n)
+      denominator = @array.inject(0){|sum, ele| sum + (ele[:y] - y_) ** 2}
+      molecule.fdiv(denominator)
+    end
+
     # 求回归
     def self.y(a, b, x)
       a + b * x
