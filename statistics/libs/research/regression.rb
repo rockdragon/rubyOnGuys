@@ -17,9 +17,9 @@ module StatLib
       self.sum(attr).fdiv(@array.size)
     end
 
-    # 方差
+    # 方差 (样本)
     def variance(attr)
-      n = @array.size
+      n = @array.size - 1
       attr_ = average(attr)
       @array.inject(0){|sum, ele| sum + (ele[attr] - attr_) ** 2}.fdiv(n)
     end
@@ -43,6 +43,13 @@ module StatLib
       molecule = @array.inject(0){|sum, ele| sum + (ele[:x] - x_) * (ele[:y] - y_)}
       denominator = @array.inject(0) {|sum, ele| sum + (ele[:x] - x_) ** 2}
       molecule.fdiv(denominator)
+    end
+
+    # a系数
+    def a
+      x_ = average(:x)
+      y_ = average(:y)
+      y_ - b * x_
     end
 
     # 相关系数
