@@ -29,6 +29,14 @@ module StatLib
       Math.sqrt(variance(attr))
     end
 
+    # x和y的标准差
+    def s_xy
+      n = @array.size - 1
+      x_ = average(:x)
+      y_ = average(:y)
+      @array.inject(0){|sum, ele| sum + (ele[:x] - x_) * (ele[:y] - y_)}.fdiv(n)
+    end
+
     # 误差平方和
     def sse
       y_ = average(:y)
@@ -57,7 +65,7 @@ module StatLib
     def r
       s_x = standard_deviation(:x)
       s_y = standard_deviation(:y)
-      (b * s_x).fdiv(s_y)
+      s_xy.fdiv(s_x * s_y)
     end
 
     # 求回归
