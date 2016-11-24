@@ -1,7 +1,6 @@
 require_relative '../../../statistics/libs/research/regression'
 
 array = [
-
     {x: 4.0, y: 12},
     {x: 4.5, y: 10},
     {x: 5.0, y: 8},
