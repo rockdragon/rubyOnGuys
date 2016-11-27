@@ -10,8 +10,8 @@ module StatLib
 
     # 方差
     def self.variance(m, n)
-      molecule = 2 * (n ** 2) * (m + n - 2)
-      denominator =  m * (n - 2) * (n - 4)
+      molecule = 2 * n ** 2 * (m + n - 2)
+      denominator = m * (n - 2) * (n - 4)
       molecule.fdiv(denominator)
     end
   end
