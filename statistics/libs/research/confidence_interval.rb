@@ -14,7 +14,7 @@ module StatLib
 
     # 正态(非正态)的置信区间
     #   n 非正态需 > 30
-    #   o 也可表示样本方差s
+    #   o 也可表示样本方差s (Za/2)
     #   level 置信水平: 0.9/0.95/0.99
     def self.interval(x, o, n, level)
       c = level_to_c(level)
