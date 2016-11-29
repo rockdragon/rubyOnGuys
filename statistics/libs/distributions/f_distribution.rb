@@ -3,7 +3,6 @@ module StatLib
 
   # F分布
   class FDistribution
-
     # 期望
     def self.ex(n)
       n.fdiv(n - 2)
